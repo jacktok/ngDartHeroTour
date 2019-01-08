@@ -1,15 +1,17 @@
 import 'package:angular/angular.dart';
-import 'src/hero_service.dart';
 import 'package:angular_router/angular_router.dart';
-// AngularDart info: https://webdev.dartlang.org/angular
-// Components info: https://webdev.dartlang.org/components
+import 'src/hero_service.dart';
+import 'src/routes.dart';
+
+
 
 @Component(
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [coreDirectives],
-  providers: [ClassProvider(HeroService)]
+  directives: [routerDirectives],
+  providers: [ClassProvider(HeroService)],
+  exports: [RoutePaths, Routes]
 )
 class AppComponent  {
   var title = 'Tour heroes';

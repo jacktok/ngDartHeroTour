@@ -7,7 +7,7 @@ import 'main.template.dart' as self;
   routerProvidersHash
 )
 
-final InjectorFactory injector = self.injector;
+final InjectorFactory injector = self.injector$Injector;
 
 void main() {
   runApp(ng.AppComponentNgFactory, createInjector: injector);
