@@ -37,6 +37,12 @@ class HeroListComponent implements OnInit {
   String _heroUrl(int id) =>
       RoutePaths.hero.toUrl(parameters: {idParam: '${id}'});
 
+  Future<void> add(String name) async {
+    name = name.trim();
+    if (name.isEmpty) return null;
+    heroes.add(await _heroService.create(name));
+    selected = null;
+  }
   Future<NavigationResult> gotoDetail() =>
       _router.navigate(_heroUrl(selected.id));
 }

@@ -14,3 +14,11 @@
     </h2>
     <button (click)="gotoDetail()">View Detail</button>
 </div>
+
+<div>
+    <label>Hero name : </label>
+    <label>
+        <input #heroName>
+    </label>
+    <button (click)="add(heroName.value); heroName.value=''">Add</button>
+</div>

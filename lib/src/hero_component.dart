@@ -8,6 +8,7 @@ import 'package:angular_router/angular_router.dart';
 @Component(
   selector: 'my-hero',
   templateUrl: 'hero_component.html',
+  styleUrls: ['hero_component.css'],
   directives: [coreDirectives, formDirectives],
 )
 class HeroComponent implements OnActivate {
@@ -30,4 +31,8 @@ class HeroComponent implements OnActivate {
   }
 
   void goBack() => _location.back();
+
+  Future<void> save() async {
+    await _heroService.update(hero);
+  }
 }
